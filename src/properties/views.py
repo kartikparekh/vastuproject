@@ -1,10 +1,25 @@
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.shortcuts import render,get_object_or_404
-
+from django.db.models import Q 
 # Create your views here.
 from django.shortcuts import render
 from .models import Property_Information,PropertyImage
 from marketing.models import Subscription
+
+def search(request):
+    query_set = Property_Information.objects.all()
+    query = request.GET.get('q')
+    if query:
+        query_set = query_set.filter(
+            Q(location__icontains=query)  
+            # Q(price__icontains=query) 
+        )
+    
+    
+    context = {
+        'queryset':query_set,
+    }
+    return render(request,'search_results.html',context)
 
 def index(request):
     latest = Property_Information.objects.order_by('-timestamp')[0:3]
