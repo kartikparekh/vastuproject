@@ -33,6 +33,7 @@
  <section class="property-grid grid">
     <div class="container">
       <div class="row">
+        {% if queryset %}
         {% for property in queryset %}
         <div class="col-md-4">
           <div class="card-box-a card-shadow">
@@ -79,6 +80,14 @@
           </div>
         </div>
         {% endfor %}
+        {% else %}
+        <div class="jumbotron jumbotron-fluid ml-3" >
+          <div class="container">
+            <h1 class="display-4">No match Found</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          </div>
+        </div>
+        {% endif %}
       </div>
       </div>
 </section>

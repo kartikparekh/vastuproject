@@ -8,11 +8,17 @@ from marketing.models import Subscription
 
 def search(request):
     query_set = Property_Information.objects.all()
-    query = request.GET.get('q')
-    if query:
+    loc = request.GET.get('location')
+    furnish = request.GET.get('furnish')
+    bhk = int(request.GET.get('bhk'))
+    types = request.GET.get('type')
+
+    if loc or bhk or furnish or types:
         query_set = query_set.filter(
-            Q(location__icontains=query)  
-            # Q(price__icontains=query) 
+            Q(location__icontains=loc) & 
+            Q(BHK__exact=bhk) &
+            Q(furnishing__exact=furnish) &
+            Q(status__exact=types)
         )
     
     
@@ -68,7 +74,6 @@ def properties(request):
         "queryset":paginated_queryset,
         "page_request_var":page_request_var,
     }
-
     return render(request, 'property-grid.html',context)
 
 def property_detail(request,id):
