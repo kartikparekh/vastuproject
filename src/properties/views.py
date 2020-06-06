@@ -68,6 +68,7 @@ def properties(request):
         "queryset":paginated_queryset,
         "page_request_var":page_request_var,
     }
+
     return render(request, 'property-grid.html',context)
 
 def property_detail(request,id):

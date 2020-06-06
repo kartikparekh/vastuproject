@@ -60,7 +60,7 @@ class Property_Information(models.Model):
             'id':self.id
         })
 
-
+    
 class PropertyImage(models.Model):
     propertY = models.ForeignKey(Property_Information, default=None, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="images/") 
