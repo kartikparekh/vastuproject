@@ -15,7 +15,7 @@ class Property_Information(models.Model):
     location = models.CharField(max_length=100)
     pincode = models.IntegerField()
     parking = models.BooleanField(default=0)
-    small_thumbnail = models.ImageField()
+    small_thumbnail = models.ImageField(upload_to="images/")
     STATUS_CHOICE = (
         ('Rent','Rent'),
         ('Sale','Sale'),
@@ -45,6 +45,12 @@ class Property_Information(models.Model):
         ('Mini banquet','Mini banquet'),
     )
     amenities = MultiSelectField(choices=AMENITIES_CHOICE)
+    PROPERTY_TYPE = (
+        ('Builder Floor','Builder Floor'),
+        ('Residential Plot','Residential Plot'),
+        ('Commercial Shops','Commercial Shops'),
+    )
+    property_type = models.CharField(max_length=100,choices=PROPERTY_TYPE,default='Residentail Plot')
 
     def __str__(self):
         return self.name
@@ -53,6 +59,7 @@ class Property_Information(models.Model):
         return reverse('property_detail',kwargs={
             'id':self.id
         })
+
 
 class PropertyImage(models.Model):
     propertY = models.ForeignKey(Property_Information, default=None, on_delete=models.CASCADE)
