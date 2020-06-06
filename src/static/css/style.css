@@ -1450,6 +1450,15 @@ footer .credits {
   background-color: #26a356;
   color: #ffffff;
 }
+@media (max-width:451px){
+  .card-box-d .card-body-d .content-d
+  {
+    font-size: .6rem;
+  }
+  .card-box-d .card-body-d .info-agents{
+    font-size: .7rem;
+  }
+}
 
 @media (min-width: 576px) {
   .intro .intro-title {
@@ -1480,6 +1489,7 @@ footer .credits {
   .sinse-box p {
     font-size: 1rem;
   }
+  
 }
 
 @media (min-width: 768px) {
@@ -1618,7 +1628,7 @@ footer .credits {
 
   .card-box-d .card-body-d p {
     margin-bottom: 8px;
-    font-size: .8rem;
+    font-size: .4rem;
   }
 
   .about-img-box {
@@ -1724,7 +1734,7 @@ footer .credits {
 
   .card-box-d .card-body-d p {
     margin-bottom: 12px;
-    font-size: 1rem;
+    font-size: .6rem;
   }
 
   .sinse-box {
@@ -1744,6 +1754,9 @@ footer .credits {
   .card-box-d .title-d {
     font-size: 2rem;
     margin: 1rem 0;
+  }
+  .card-box-d .card-body-d .content-d{
+    font-size: .8rem;
   }
 }
 
