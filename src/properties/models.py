@@ -9,7 +9,14 @@ class Property_Information(models.Model):
     name = models.CharField(max_length=500)
     description = models.TextField(max_length=10000)
     address = models.TextField(max_length=10000)
-    BHK = models.IntegerField()
+    BHK_OPTIONS = (
+        ('1','1'),
+        ('2','2'),
+        ('3','3'),
+        ('4','4'),
+        ('other','other')
+    )
+    BHK = models.CharField(max_length=100,choices=BHK_OPTIONS, default=1)
     image = models.ImageField(blank=True)
     area = models.CharField(max_length=500,default='0sqft')
     price = models.CharField(max_length=100)
@@ -20,7 +27,7 @@ class Property_Information(models.Model):
     STATUS_CHOICE = (
         ('Rent','Rent'),
         ('Sale','Sale'),
-        ('Under-Construction','Under-Construction'),
+        ('Under-Const.','Under-Construction'),
     )
     status = models.CharField(max_length=100,choices=STATUS_CHOICE,default='Rent')
     FURNISHING_CHOICE = (

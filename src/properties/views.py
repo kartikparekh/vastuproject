@@ -10,15 +10,15 @@ def search(request):
     query_set = Property_Information.objects.all()
     loc = request.GET.get('location')
     furnish = request.GET.get('furnish')
-    bhk = int(request.GET.get('bhk'))
+    ptype = request.GET.get('bhk')
     types = request.GET.get('type')
 
-    if loc or bhk or furnish or types:
+    if loc and furnish and types and ptype:
         query_set = query_set.filter(
             Q(location__icontains=loc) & 
-            Q(BHK__exact=bhk) &
+            Q(property_type__icontains=ptype) &
             Q(furnishing__exact=furnish) &
-            Q(status__exact=types)
+            Q(status__icontains=types)
         )
     
     

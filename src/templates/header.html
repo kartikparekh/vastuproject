@@ -18,11 +18,10 @@
         <div class="col-md-6 mb-2">
           <div class="form-group">
             <label for="Type">Type</label>
-            <select class="form-control form-control-lg form-control-a" name="type" id="Type">
-              <option>All Type</option>
-              <option>For Rent</option>
-              <option>For Sale</option>
-              <option>Under-Construction</option>
+            <select class="form-control form-control-lg form-control-a" name="type" id="Type" required>
+              <option>Rent</option>
+              <option>Sale</option>
+              <option>Under-Const.</option>
             </select>
           </div>
         </div>
@@ -31,19 +30,17 @@
             <label for="city">Location</label>
             <div class="form-group">
               
-              <input type="text" name="location" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+              <input type="text" name="location" class="form-control form-control-lg form-control-a" placeholder="Keyword" required>
             </div>
           </div>
         </div>
         <div class="col-md-6 mb-2">
           <div class="form-group">
-            <label for="bedrooms">BHK</label>
-            <select class="form-control form-control-lg form-control-a" name="bhk" id="bedrooms">
-              <option>01</option>
-              <option>02</option>
-              <option>03</option>
-              <option>04</option>
-              <option>other</option>
+            <label for="bedrooms">Property Type</label>
+            <select class="form-control form-control-lg form-control-a" type='text' name="bhk" id="bedrooms" required>
+              <option>Residential Plot</option>
+              <option>Commercial Shops</option>
+              <option>Builder Floor</option>
             </select>
           </div>
         </div>
@@ -52,7 +49,7 @@
         <div class="col-md-6 mb-2">
           <div class="form-group">
             <label for="price">Furnishing</label>
-            <select class="form-control form-control-lg form-control-a" name="furnish" id="furnish">
+            <select class="form-control form-control-lg form-control-a" name="furnish" id="furnish" required>
               <option>Un-Furnished</option>
               <option>Semi-Furnished</option>
               <option>Furnished</option>
