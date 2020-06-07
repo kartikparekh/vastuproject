@@ -79,7 +79,7 @@ def contact(request):
             subject,
             content,
             email,
-            ['mihirjadhavofficial@gmail.com'],
+            ['receiver_email@gmail.com'],
             fail_silently=False
         )
         print(email)
