@@ -11,7 +11,7 @@ urlpatterns = [
     path('vre-admin/', admin.site.urls),
     path('',index),
     path('home/about/',about),
-    path('home/contact/',contact),
+    path('home/contact/',contact, name='contact'),
     path('home/properties/',properties, name='property_list'),
     path('home/search/',search, name='search'),
     path('home/properties/<id>/',property_detail,name='property_detail'),

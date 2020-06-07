@@ -2,10 +2,13 @@ from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.shortcuts import render,get_object_or_404
 from django.db.models import Q 
 # Create your views here.
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from .models import Property_Information,PropertyImage
 from marketing.models import Subscription
-
+from django.core.mail import send_mail
+from vastu import settings
+from django import http
+from django.template import loader
 def search(request):
     query_set = Property_Information.objects.all()
     loc = request.GET.get('location')
@@ -57,6 +60,31 @@ def about(request):
     return render(request, 'about.html',{})
 
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+
+        template = loader.get_template('email_content.txt')
+        context = {
+            'name' : name,
+            'email' : email,
+            'subject' : subject,
+            'message' : message,
+        }
+        content = template.render(context)
+
+        send_mail(
+            subject,
+            content,
+            email,
+            ['mihirjadhavofficial@gmail.com'],
+            fail_silently=False
+        )
+        print(email)
+
+        return redirect(reverse('contact'))
     return render(request, 'contact.html',{})
 
 def properties(request):
