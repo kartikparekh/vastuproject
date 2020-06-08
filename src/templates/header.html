@@ -19,6 +19,7 @@
           <div class="form-group">
             <label for="Type">Type</label>
             <select class="form-control form-control-lg form-control-a" name="type" id="Type" required>
+              <option></option>
               <option>Rent</option>
               <option>Sale</option>
               <option>Under-Const.</option>
@@ -37,7 +38,8 @@
         <div class="col-md-6 mb-2">
           <div class="form-group">
             <label for="bedrooms">Property Type</label>
-            <select class="form-control form-control-lg form-control-a" type='text' name="bhk" id="bedrooms" required>
+            <select class="form-control form-control-lg form-control-a" type='text' name="ptype" id="bedrooms" required>
+              <option></option>
               <option>Residential Plot</option>
               <option>Commercial Shops</option>
               <option>Builder Floor</option>
@@ -46,19 +48,22 @@
         </div>
         
       
+        
         <div class="col-md-6 mb-2">
           <div class="form-group">
-            <label for="price">Furnishing</label>
-            <select class="form-control form-control-lg form-control-a" name="furnish" id="furnish" required>
-              <option>Un-Furnished</option>
-              <option>Semi-Furnished</option>
-              <option>Furnished</option>
-              <option>Fully-Furnished</option>            
+            <label for="price">BHK</label>
+            <select class="form-control form-control-lg form-control-a" name="bhk" id="bhk" required>
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>            
+              <option>other</option>            
             </select>
           </div>
         </div>
         <div class="col-md-12">
-          <button type="submit" class="btn btn-b">Search Property</button>
+          <button type="submit" class="btn btn-b btn-lg btn-block">Search Property</button>
         </div>
       </div>
     </form>

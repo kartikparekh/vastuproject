@@ -11,20 +11,23 @@ from django import http
 from django.template import loader
 def search(request):
     query_set = Property_Information.objects.all()
+    
     loc = request.GET.get('location')
-    furnish = request.GET.get('furnish')
-    ptype = request.GET.get('bhk')
+    # furnish = request.GET.get('furnish')
+    ptype = request.GET.get('ptype')
     types = request.GET.get('type')
+    bhk = request.GET.get('bhk')
 
     #TODO: SSearch form to be done
     
-    # if loc and furnish and types and ptype:
-    #     query_set = query_set.filter(
-    #         Q(location__icontains=loc) & 
-    #         Q(property_type__icontains=ptype) &
-    #         Q(furnishing__exact=furnish) &
-    #         Q(status__icontains=types)
-    #     )
+    if loc and types and ptype and bhk:
+        query_set = query_set.filter(
+            Q(location__icontains=loc) &
+            Q(property_type__exact=ptype) &
+            # Q(furnishing__exact=furnish) &
+            Q(status__exact=types) &
+            Q(BHK__exact=bhk) 
+        )
     
     
     context = {
