@@ -1173,7 +1173,7 @@ a:hover {
 
 .card-box-ico {
   padding: 1rem 3rem 1rem 2.5rem;
-  border: 5px solid #2eca6a;
+  border: 3px solid #2eca6a;
 }
 
 .card-box-ico span {
@@ -1182,7 +1182,7 @@ a:hover {
 }
 
 .title-c {
-  font-size: 2.5rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-left: -40px;
 }

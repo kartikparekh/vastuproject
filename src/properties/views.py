@@ -16,13 +16,15 @@ def search(request):
     ptype = request.GET.get('bhk')
     types = request.GET.get('type')
 
-    if loc and furnish and types and ptype:
-        query_set = query_set.filter(
-            Q(location__icontains=loc) & 
-            Q(property_type__icontains=ptype) &
-            Q(furnishing__exact=furnish) &
-            Q(status__icontains=types)
-        )
+    #TODO: SSearch form to be done
+    
+    # if loc and furnish and types and ptype:
+    #     query_set = query_set.filter(
+    #         Q(location__icontains=loc) & 
+    #         Q(property_type__icontains=ptype) &
+    #         Q(furnishing__exact=furnish) &
+    #         Q(status__icontains=types)
+    #     )
     
     
     context = {
@@ -89,7 +91,7 @@ def contact(request):
 
 def properties(request):
     property_list = Property_Information.objects.all()
-    paginator = Paginator(property_list,3)
+    paginator = Paginator(property_list,6)
     page_request_var = 'page'
     page = request.GET.get(page_request_var)
     try:
