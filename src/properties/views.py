@@ -84,7 +84,7 @@ def contact(request):
             subject,
             content,
             email,
-            ['receiver_email@gmail.com'],
+            ['vastu07realestate@gmail.com'],
             fail_silently=False
         )
         print(email)

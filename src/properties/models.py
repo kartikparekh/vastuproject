@@ -55,10 +55,11 @@ class Property_Information(models.Model):
     amenities = MultiSelectField(choices=AMENITIES_CHOICE)
     PROPERTY_TYPE = (
         ('Builder Floor','Builder Floor'),
-        ('Residential Plot','Residential Plot'),
+        (' Plots',' Plots'),
         ('Commercial Shops','Commercial Shops'),
+        ('Flats','Flats'),
     )
-    property_type = models.CharField(max_length=100,choices=PROPERTY_TYPE,default='Residentail Plot')
+    property_type = models.CharField(max_length=100,choices=PROPERTY_TYPE,default=' Plot')
 
     def __str__(self):
         return self.name

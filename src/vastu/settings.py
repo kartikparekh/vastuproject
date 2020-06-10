@@ -2,8 +2,11 @@
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from typing import List, Any
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = 'staticfiles'
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -12,9 +15,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '17ns+z*7b&5eslb9ap51a8@0(6ni4rwh28@w&%a12hat-^8-y3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -114,8 +117,8 @@ STATIC_ROOT = os.path.join(VENV_PATH,'static_root')
 MEDIA_ROOT = os.path.join(VENV_PATH,'media_root')
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'owner_email@gmail.com'
-EMAIL_HOST_PASSWORD = 'password'
+EMAIL_HOST_USER = 'vastu07realestate@gmail.com'
+EMAIL_HOST_PASSWORD = '5633hitesh'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
